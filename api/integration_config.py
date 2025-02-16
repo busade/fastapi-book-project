@@ -74,6 +74,7 @@ integration_json = {
   }
 }
 
+# config for integration
 @router.get('/integration-config')
 async def get_integration_json():
     return JSONResponse(content=integration_json)
