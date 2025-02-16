@@ -68,3 +68,4 @@ async def get_book(book_id: int) -> Book:
         raise HTTPException(status_code=404, detail = "Book not found")
     return book
  
+
