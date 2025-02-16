@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     TESTING: bool = False
     EC2_PUBLIC_IP: str=os.getenv("EC2_PUBLIC_IP","ec2-13-61-190-61.eu-north-1.compute.amazonaws.com")
     THICK_URL: str = f"http://{EC2_PUBLIC_IP}/telex-webhook"
-    SLACK_WEBHOOK_URL: str = os.getenv("TARGET_URL","")
+    SLACK_WEBHOOK_URL: str = os.getenv("SLACK_WEBHOOK_URL","")
 
 
 settings = Settings()
