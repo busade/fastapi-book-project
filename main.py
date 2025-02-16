@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.router import api_router
-from api.integration_config import router as integration_router
+from api.routes.integration_config import router as integration_router
 from core.config import settings
 
 app = FastAPI()
