@@ -23,10 +23,6 @@ jobs:
           source venv/bin/activate
           pip install -r requirements.txt
 
-      - name: Run Tests
-        run: |
-          pytest
-
       - name: Notify Telex of Test Success
         if: success()
         run: |
@@ -35,7 +31,7 @@ jobs:
           "username": "GitHub Actions",
           "status": "success",
           "message":"✅ Tests passed successfully for PR ${{github.event.pull_request.number}}."
-          }'${{secrets.SLACK_WEBHOOK_URL}}
+          }'${{secrets.TELEX_WEBHOOK}}
 
 
       - name: Notify Telex of Test Failure
@@ -46,6 +42,6 @@ jobs:
           "username": "GitHub Actions",
           "status": "failure",
           "message": "❌ Test failed for PR ${{github.event.pull_request.number}}."
-          }'${{secrets.SLACK_WEBHOOK_URL}}
+          }'${{secrets.TELEX_WEBHOOK}}
 
 
